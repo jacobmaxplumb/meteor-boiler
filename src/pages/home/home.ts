@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit {
+  rootPage = this;
   examples: Observable<Example[]>;
 
   constructor() {}
@@ -21,6 +22,10 @@ export class HomePage implements OnInit {
 
   removeExample(example: Example) {
     Examples.remove(example);
+  }
+
+  openPage(p) {
+    console.log(p)
   }
 
 }

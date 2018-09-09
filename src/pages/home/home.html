@@ -1,10 +1,31 @@
+<ion-menu [content]="mycontent">
+
+  <ion-content>
+    <ion-list>
+      <button ion-item menuClose (click)="openPage('homePage')">
+        Home
+      </button>
+      <button ion-item menuClose (click)="openPage('catsPage')">
+        Cats
+      </button>
+      <button ion-item menuClose (click)="openPage('dogsPage')">
+        Dogs
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
 <ion-header>
-  <ion-navbar>
-    <ion-title>
+  <ion-navbar #mycontent>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="text-align: center">
       Home
     </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only menuToggle>
         <ion-icon name="person-add"></ion-icon>
       </button>
     </ion-buttons>
@@ -12,12 +33,5 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item-sliding *ngFor="let example of examples | async">
-      <h1 ion-item>{{ example.prop1 }}</h1>
-      <ion-item-options>
-        <button ion-button color="danger" (click)="removeExample(example)">Remove</button>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
+  Home
 </ion-content>
