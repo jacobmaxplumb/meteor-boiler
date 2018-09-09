@@ -30,5 +30,10 @@ export class MyApp {
   openPage(page) {
     this.rootPage = page;
   }
+
+  logOut() {
+    Meteor.logout();
+    this.rootPage = LoginPage
+  }
 }
 

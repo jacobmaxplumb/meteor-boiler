@@ -27,7 +27,7 @@ export class ProfilePage implements OnInit {
   updateProfile(): void {
     MeteorObservable.call('updateProfile', this.profile).subscribe({
       next: () => {
-        this.navCtrl.push(HomePage);
+        this.navCtrl.setRoot(HomePage);
       },
       error: (e: Error) => {
         this.handleError(e);

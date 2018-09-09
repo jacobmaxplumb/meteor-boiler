@@ -1,7 +1,10 @@
+import { Meteor } from 'meteor/meteor';
+import { LoginPage } from './../login/login';
 import { Examples } from 'api/collections';
 import { Example } from 'api/models';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'home',
@@ -11,7 +14,7 @@ export class HomePage implements OnInit {
   rootPage = this;
   examples: Observable<Example[]>;
 
-  constructor() {}
+  constructor(private navController: NavController) {}
 
   ngOnInit() {
     Examples.find({}).subscribe((examples) => {
@@ -26,6 +29,11 @@ export class HomePage implements OnInit {
 
   openPage(p) {
     console.log(p)
+  }
+
+  logOut() {
+    Meteor.logout();
+    this.navController.setRoot(LoginPage)
   }
 
 }

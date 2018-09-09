@@ -1,34 +1,11 @@
-<ion-menu [content]="mycontent">
-
-  <ion-content>
-    <ion-list>
-      <button ion-item menuClose (click)="openPage('homePage')">
-        Home
-      </button>
-      <button ion-item menuClose (click)="openPage('catsPage')">
-        Cats
-      </button>
-      <button ion-item menuClose (click)="openPage('dogsPage')">
-        Dogs
-      </button>
-    </ion-list>
-  </ion-content>
-
-</ion-menu>
-
 <ion-header>
-  <ion-navbar #mycontent>
+  <ion-navbar>
     <button ion-button icon-only menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title style="text-align: center">
       Home
     </ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only menuToggle>
-        <ion-icon name="person-add"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
